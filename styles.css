@@ -1,0 +1,180 @@
+/* Completed Task */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* General Reset */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* To-Do Heading */
+.heading {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Background Animation */
+body {
+  background: linear-gradient(-45deg, #007bff, #00c6ff, #3f87ff, #0056ff);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Main Card */
+.todo-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.todo-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Input Field */
+#taskinput {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #3f87ff;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+#taskinput:focus {
+  border-color: #0056ff;
+  box-shadow: 0 0 6px #0056ff;
+}
+
+/* Add Button */
+#add-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 17px;
+  background: linear-gradient(to right, #3f87ff, #0056ff);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#add-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Task List */
+#tasklist {
+  list-style: none;
+  padding: 0;
+}
+
+/* Task Item */
+#tasklist li {
+  background: #dff5ff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+#tasklist li:hover {
+  transform: scale(1.01);
+  background-color: #cceeff;
+}
+
+/* Task Text */
+#tasklist li span {
+  flex-grow: 1;
+  font-size: 16px;
+  color: #222;
+}
+
+/* Delete Button */
+#tasklist li button {
+  background: radial-gradient(circle, #2f1fff, #0000aa);
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  font-size: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#tasklist li button:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Enhancements */
+@media screen and (max-width: 480px) {
+  .todo-container {
+    padding: 1.5rem;
+  }
+
+  #taskinput, #add-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  #tasklist li span {
+    font-size: 14px;
+  }
+
+  #tasklist li button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
